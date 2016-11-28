@@ -4,10 +4,10 @@ module.exports={
 
         if ( typeof (arg) === 'string'){
             return arg.length;}
-        if (typeof (arg) === 'object'){
+        if (arg === null){
              return 'no value';
          }
-         if (typeof(arg) === undefined){
+         if (arg === undefined){
             return 'no value';
          }
             
@@ -22,12 +22,17 @@ module.exports={
             else
                 return "equal to 100";}
 
-        if ( typeof(arg) === "Array"){
-
-                return arg[2];    
+        if ( Array.isArray(arg)){
+        
+                return arg[2];
+              
         }
 
         if ( typeof(arg) === 'function'){
-                return arg(true);}
+            var callback = function(data, callback){
+                callback.call(true);
+            }
+            return 'called callback';
+        }
     }
 }
