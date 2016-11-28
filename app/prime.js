@@ -20,3 +20,4 @@ for(var i=1; i<=number; i++){
 }
 return primes;
 };
+module.exports = getPrimes;
